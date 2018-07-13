@@ -1,0 +1,449 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98048CC4-02FE-432F-9AE1-63611AFBF654}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KryptoniteGaming</RootNamespace>
+    <AssemblyName>KryptoniteGaming</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min %282%29.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\color\color-1.css" />
+    <Content Include="css\color\color-10.css" />
+    <Content Include="css\color\color-11.css" />
+    <Content Include="css\color\color-12.css" />
+    <Content Include="css\color\color-13.css" />
+    <Content Include="css\color\color-14.css" />
+    <Content Include="css\color\color-15.css" />
+    <Content Include="css\color\color-16.css" />
+    <Content Include="css\color\color-17.css" />
+    <Content Include="css\color\color-18.css" />
+    <Content Include="css\color\color-19.css" />
+    <Content Include="css\color\color-2.css" />
+    <Content Include="css\color\color-20.css" />
+    <Content Include="css\color\color-3.css" />
+    <Content Include="css\color\color-4.css" />
+    <Content Include="css\color\color-5.css" />
+    <Content Include="css\color\color-6.css" />
+    <Content Include="css\color\color-7.css" />
+    <Content Include="css\color\color-8.css" />
+    <Content Include="css\color\color-9.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\ionicons.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\mediaelementplayer.min.css" />
+    <Content Include="css\mega-menu\mega_menu.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\shortcodes.css" />
+    <Content Include="css\Site.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\touchspin.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="icons\android-icon-144x144.png" />
+    <Content Include="icons\android-icon-192x192.png" />
+    <Content Include="icons\android-icon-36x36.png" />
+    <Content Include="icons\android-icon-48x48.png" />
+    <Content Include="icons\android-icon-72x72.png" />
+    <Content Include="icons\android-icon-96x96.png" />
+    <Content Include="icons\apple-icon-114x114.png" />
+    <Content Include="icons\apple-icon-120x120.png" />
+    <Content Include="icons\apple-icon-144x144.png" />
+    <Content Include="icons\apple-icon-152x152.png" />
+    <Content Include="icons\apple-icon-180x180.png" />
+    <Content Include="icons\apple-icon-57x57.png" />
+    <Content Include="icons\apple-icon-60x60.png" />
+    <Content Include="icons\apple-icon-72x72.png" />
+    <Content Include="icons\apple-icon-76x76.png" />
+    <Content Include="icons\apple-icon-precomposed.png" />
+    <Content Include="icons\apple-icon.png" />
+    <Content Include="icons\browserconfig.xml" />
+    <Content Include="icons\favicon-16x16.png" />
+    <Content Include="icons\favicon-32x32.png" />
+    <Content Include="icons\favicon-96x96.png" />
+    <Content Include="icons\favicon.ico" />
+    <Content Include="icons\ms-icon-144x144.png" />
+    <Content Include="icons\ms-icon-150x150.png" />
+    <Content Include="icons\ms-icon-310x310.png" />
+    <Content Include="icons\ms-icon-70x70.png" />
+    <Content Include="images\02.png" />
+    <Content Include="images\09.jpg" />
+    <Content Include="images\award-grey.png" />
+    <Content Include="images\award.png" />
+    <Content Include="images\back-btn.png" />
+    <Content Include="images\bg\01.jpg" />
+    <Content Include="images\bg\02.jpg" />
+    <Content Include="images\bg\03.jpg" />
+    <Content Include="images\bg\04.jpg" />
+    <Content Include="images\bg\05.jpg" />
+    <Content Include="images\bg\06.jpg" />
+    <Content Include="images\bg\07.jpg" />
+    <Content Include="images\bg\08.jpg" />
+    <Content Include="images\bg\09.jpg" />
+    <Content Include="images\bg\10.jpg" />
+    <Content Include="images\bg\11.jpg" />
+    <Content Include="images\bg\12.jpg" />
+    <Content Include="images\bg\13.jpg" />
+    <Content Include="images\bg\14.jpg" />
+    <Content Include="images\bg\15.jpg" />
+    <Content Include="images\bg\16.jpg" />
+    <Content Include="images\bg\19.png" />
+    <Content Include="images\bg\20.png" />
+    <Content Include="images\bg\21.jpg" />
+    <Content Include="images\bg\22.jpg" />
+    <Content Include="images\bg\26.jpg" />
+    <Content Include="images\bg\27.jpg" />
+    <Content Include="images\bg\28.jpg" />
+    <Content Include="images\bg\29.jpg" />
+    <Content Include="images\bg\30.jpg" />
+    <Content Include="images\bg\31.jpg" />
+    <Content Include="images\bg\32.jpg" />
+    <Content Include="images\bg\33.jpg" />
+    <Content Include="images\bg\34.jpg" />
+    <Content Include="images\bg\35.jpg" />
+    <Content Include="images\bg\36.jpg" />
+    <Content Include="images\bg\37.jpg" />
+    <Content Include="images\bg\38.jpg" />
+    <Content Include="images\bg\39.jpg" />
+    <Content Include="images\bg\40.jpg" />
+    <Content Include="images\bg\404.jpg" />
+    <Content Include="images\bg\4042.jpg" />
+    <Content Include="images\bg\41.jpg" />
+    <Content Include="images\bg\42.jpg" />
+    <Content Include="images\bg\43.jpg" />
+    <Content Include="images\bg\44.jpg" />
+    <Content Include="images\bg\construction.gif" />
+    <Content Include="images\bg\mountain-1.png" />
+    <Content Include="images\bg\pattern.png" />
+    <Content Include="images\bg\pattern1.png" />
+    <Content Include="images\bg\road.jpg" />
+    <Content Include="images\bg\under.gif" />
+    <Content Include="images\bg\under.jpg" />
+    <Content Include="images\bg\under.png" />
+    <Content Include="images\blog-controls.png" />
+    <Content Include="images\ckeck.png" />
+    <Content Include="images\crystal.png" />
+    <Content Include="images\crystals.png" />
+    <Content Include="images\dark-green-bg.jpg" />
+    <Content Include="images\dark-green-bg2.jpg" />
+    <Content Include="images\dark-green-bg3.jpg" />
+    <Content Include="images\dowen_arrow.png" />
+    <Content Include="images\down-bg.png" />
+    <Content Include="images\experience.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\loader.png" />
+    <Content Include="images\logo-black.png" />
+    <Content Include="images\logo-light.png" />
+    <Content Include="images\logo-new.png" />
+    <Content Include="images\logo-white.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\portfolio\grid\01.jpg" />
+    <Content Include="images\portfolio\grid\02.jpg" />
+    <Content Include="images\portfolio\grid\03.jpg" />
+    <Content Include="images\portfolio\grid\04.jpg" />
+    <Content Include="images\portfolio\grid\05.jpg" />
+    <Content Include="images\portfolio\grid\06.jpg" />
+    <Content Include="images\portfolio\grid\07.jpg" />
+    <Content Include="images\portfolio\grid\08.jpg" />
+    <Content Include="images\portfolio\grid\09.jpg" />
+    <Content Include="images\portfolio\grid\10.jpg" />
+    <Content Include="images\portfolio\grid\11.jpg" />
+    <Content Include="images\portfolio\grid\12.jpg" />
+    <Content Include="images\portfolio\grid\13.jpg" />
+    <Content Include="images\portfolio\grid\14.jpg" />
+    <Content Include="images\portfolio\grid\15.jpg" />
+    <Content Include="images\portfolio\grid\16.jpg" />
+    <Content Include="images\portfolio\grid\17.jpg" />
+    <Content Include="images\portfolio\grid\18.jpg" />
+    <Content Include="images\portfolio\grid\19.jpg" />
+    <Content Include="images\portfolio\grid\20.jpg" />
+    <Content Include="images\portfolio\grid\21.jpg" />
+    <Content Include="images\portfolio\grid\22.jpg" />
+    <Content Include="images\portfolio\grid\23.jpg" />
+    <Content Include="images\portfolio\grid\24.jpg" />
+    <Content Include="images\portfolio\grid\25.jpg" />
+    <Content Include="images\portfolio\grid\26.jpg" />
+    <Content Include="images\portfolio\masonry\01.jpg" />
+    <Content Include="images\portfolio\masonry\02.jpg" />
+    <Content Include="images\portfolio\masonry\03.jpg" />
+    <Content Include="images\portfolio\masonry\04.jpg" />
+    <Content Include="images\portfolio\masonry\05.jpg" />
+    <Content Include="images\portfolio\masonry\06.jpg" />
+    <Content Include="images\portfolio\masonry\07.jpg" />
+    <Content Include="images\portfolio\small\01.jpg" />
+    <Content Include="images\portfolio\small\02.jpg" />
+    <Content Include="images\portfolio\small\03.jpg" />
+    <Content Include="images\portfolio\small\04.jpg" />
+    <Content Include="images\portfolio\small\05.jpg" />
+    <Content Include="images\portfolio\small\06.jpg" />
+    <Content Include="images\portfolio\small\07.jpg" />
+    <Content Include="images\portfolio\small\08.jpg" />
+    <Content Include="images\portfolio\small\09.jpg" />
+    <Content Include="images\portfolio\small\10.jpg" />
+    <Content Include="images\portfolio\small\11.jpg" />
+    <Content Include="images\portfolio\small\12.jpg" />
+    <Content Include="images\portfolio\small\13.jpg" />
+    <Content Include="images\portfolio\small\14.jpg" />
+    <Content Include="images\portfolio\small\15.jpg" />
+    <Content Include="images\portfolio\small\16.jpg" />
+    <Content Include="images\portfolio\small\17.jpg" />
+    <Content Include="images\portfolio\small\18.jpg" />
+    <Content Include="images\portfolio\small\19.jpg" />
+    <Content Include="images\portfolio\small\20.jpg" />
+    <Content Include="images\portfolio\small\21.jpg" />
+    <Content Include="images\portfolio\small\22.jpg" />
+    <Content Include="images\portfolio\small\23.jpg" />
+    <Content Include="images\portfolio\small\24.jpg" />
+    <Content Include="images\portfolio\small\25.jpg" />
+    <Content Include="images\signature-black.png" />
+    <Content Include="images\signature.png" />
+    <Content Include="images\slot.png" />
+    <Content Include="images\splash.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\InputSpinner.js" />
+    <None Include="js\jquery-3.3.1-vsdoc.js" />
+    <None Include="js\jquery-3.3.1.intellisense.js" />
+    <Content Include="js\jquery-3.3.1.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery-3.3.1.slim.js" />
+    <Content Include="js\jquery-3.3.1.slim.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <None Include="js\jquery.validate-vsdoc.js" />
+    <Content Include="js\jquery.validate.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\jquery.validate.unobtrusive.js" />
+    <Content Include="js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\mega-menu\mega_menu.js" />
+    <Content Include="js\modernizr-2.8.3.js" />
+    <Content Include="js\modernizr.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="js\touchspin.js" />
+    <Content Include="Models\DB\KryptoniteModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>KryptoniteModel.Context.cs</LastGenOutput>
+      <DependentUpon>KryptoniteModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DB\KryptoniteModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KryptoniteModel.edmx</DependentUpon>
+      <LastGenOutput>KryptoniteModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\KryptoniteModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KryptoniteModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\KryptoniteModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KryptoniteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\KryptoniteModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KryptoniteModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\User.cs">
+      <DependentUpon>KryptoniteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityManager\UserManager.cs" />
+    <Compile Include="Models\ViewModel\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\DB\KryptoniteModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KryptoniteModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DB\KryptoniteModel.edmx.diagram">
+      <DependentUpon>KryptoniteModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <Content Include="icons\manifest.json" />
+    <Content Include="images\bg\Thumbs.db" />
+    <Content Include="js\jquery-3.3.1.min.map" />
+    <Content Include="js\jquery-3.3.1.slim.min.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64655</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64655/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
