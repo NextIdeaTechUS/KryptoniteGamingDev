@@ -658,7 +658,7 @@ header .mega-menu>section.menu-list-items { background: #222222; }
 .mega-menu .menu-sidebar { padding: 0 0 0 15px; position: relative; }
 .mega-menu .menu-sidebar:before { background: rgba(255, 255, 255, 0.4); left: 0; top: 50%; margin-top: -19px; width: 1px; height: 35px; content: ""; position: absolute; }
 .mega-menu .menu-sidebar > li { float: left; line-height: 90px; margin: 0 2px; }
-.mega-menu .menu-sidebar > li > a { margin: 0 10px; font-size: 16px; color: #fff; }
+.mega-menu .menu-sidebar > li > a { margin: 0 10px; font-size: 20px; color: #fff; }
 .mega-menu .menu-sidebar > li > a:hover { color: #5fb91e; }
 .mega-menu .menu-sidebar > li.iq-share { margin-left: 10px; margin-right: 0; margin-top: 22px; }
 

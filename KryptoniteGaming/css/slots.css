@@ -1,0 +1,50 @@
+#wrap2 {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/slots/background2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#slots {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 500px;
+}
+
+#game {
+  text-align: center;
+}
+
+
+button {
+  font-size: 7pt;
+}
+
+#info {
+  
+  color:white;
+}
+
+#credits {
+  font-size: 10pt;
+}
+
+#log {
+  color: #666666;
+}
+
+#attribution {
+  text-align: right;
+  width: 280px;
+  font-size: 7pt;
+  color: #666666;
+  font-family: arial, helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+#attribution a {
+  color: #6666ff;
+}
+

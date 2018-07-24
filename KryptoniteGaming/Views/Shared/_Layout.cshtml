@@ -30,15 +30,21 @@
     <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css" />
     <link href="../css/animate.css" rel="stylesheet" type="text/css" />
     <link href="../css/mediaelementplayer.min.css" rel="stylesheet" type="text/css" />
-    <link href="../css/shortcodes.css?t=2" rel="stylesheet" type="text/css" />
+    <link href="../css/shortcodes.css?t=4" rel="stylesheet" type="text/css" />
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <link href="../css/slick.css" rel="stylesheet" type="text/css" />
+    <link href="../css/slick-theme.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" type="text/css" href="../css/slots.css?t=@DateTime.Now.Millisecond" />
 
 
 </head>
 <body style="background-image: url('../images/dark-green-bg2.jpg');background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;height: 100%;background-color:black; ">
+    background-position: center;height: 100%;background-color:black;min-height:100%;margin-bottom:60px; ">
 
 
     <!-- loading -->
@@ -56,7 +62,7 @@
             <section class="menu-list-items">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-md-4">
                             <!-- menu logo -->
                             <ul class="menu-logo">
                                 <li>
@@ -65,7 +71,26 @@
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="menu-sidebar pull-right">
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="row" style="padding-top:10px;color:white;">
+
+                                <div class="col-md-12" style="text-align:center;">
+                                    Credits:
+                                </div>
+
+                            </div>
+                            <div class="row" style="padding-top:10px;">
+                                <div class="col-md-12" style="text-align:center;font-size:40px;color:white;">
+                                    <b>$123.00</b>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col=md-4">
+                            <ul class="menu-sidebar pull-right" style="font-size:30px;">
+
                                 <li>
                                     <a href="#"><i class="fa fa-user"></i> Account ABC123</a>
                                 </li>
@@ -94,13 +119,13 @@
     MAIN CONTENT -->
 
 
-    <div class="container body-content" style="height:100%;">
+    <div class="container body-content" >
         @RenderBody()
     </div>
 
     <!--=================================
     Footer -->
-    <footer class="iq-footer2 iq-over-black-80 iq-bg jarallax" style="background-image: url('../images/bg/22.jpg'); background-position: left center;">
+    <footer class="iq-footer2 iq-over-black-80 iq-bg jarallax" style="display:none;background-image: url('../images/bg/22.jpg'); background-position: left center;position:absolute;bottom:0; width:100%;">
 
         <div class="footer-bottom">
             <div class="container">
@@ -110,13 +135,7 @@
                             <p>&copy; @DateTime.Now.Year - Kryptonite Gaming</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 iq-re-4-mt30">
-                        <ul class="iq-media-blog">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google"></i></a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -140,13 +159,17 @@
     <script src="../js/touchspin.js"></script>
     <script src="../js/mega-menu/mega_menu.js"></script>
 
+    <script src="../js/slick.js"></script>
+
+    <script src="../js/slots.js?t=@DateTime.Now.Millisecond"></script>
 
 
     <script>
 
         jQuery(document).ready(function () {
 
-            $("input[name='currentBet']").InputSpinner();
+
+            InitPage();
 
         }); /*ready*/
 
