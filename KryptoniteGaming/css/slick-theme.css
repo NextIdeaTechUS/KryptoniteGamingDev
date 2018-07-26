@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+﻿@charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list
 {
@@ -79,17 +79,14 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: -145px;
 }
 [dir='rtl'] .slick-prev
 {
     right: -25px;
     left: auto;
 }
-.slick-prev:before
-{
-    content: '←';
-}
+
 [dir='rtl'] .slick-prev:before
 {
     content: '→';
@@ -104,10 +101,16 @@
     right: auto;
     left: -25px;
 }
+
 .slick-next:before
 {
-    content: '→';
+    content: url('../images/right-arrow.png');
 }
+
+.slick-prev:before {
+    content: url('../images/left-arrow.png');
+}
+
 [dir='rtl'] .slick-next:before
 {
     content: '←';
