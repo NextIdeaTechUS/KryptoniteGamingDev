@@ -60,6 +60,7 @@ namespace KryptoniteGaming.Controllers
                 {
                     if (ULV.Password.Equals(password))
                     {
+                        Session["UserName"] = ULV.LoginName;
                         FormsAuthentication.SetAuthCookie(ULV.LoginName, false);
                         return RedirectToAction("Welcome", "Home");
                     }

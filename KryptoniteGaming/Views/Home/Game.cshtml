@@ -28,11 +28,7 @@
                         <canvas id="slots" width="500" height="500"></canvas><br />
 
                     </div>
-
-                    @*<button type="button" onclick="spin(1);">1 Line</button>
-                    <button type="button" onclick="spin(3);">3 Lines</button>
-                    <button type="button" onclick="spin(5);">5 Lines</button>*@
-
+                    
                     <div style="display:none;" id="info">
                         <p id="credits"></p>
                         <p id="log"></p>
@@ -57,32 +53,32 @@
         <div class="col-md-1"></div>
 
         <div class="col-md-2">
-            <div class="alert alert-warning" role="alert">
+            <div id="divAvailableMoney" class="alert alert-warning" role="alert">
                 Available money: $5.00
             </div>
         </div>
 
         <div class="col-md-2">
-            <div class="alert alert-warning" role="alert">
+            <div id="divCurrentBet" class="alert alert-warning" role="alert">
                 Current Bet:
-                <input name="currentBet" type="number" value=".25" data-decimals="2" min=".25" max="100" step="0.25" />
+                <input name="currentBet" id="txtCurrentBet" type="number" value=".25" data-decimals="2" min=".25" max="100" step="0.25" />
             </div>
         </div>
 
         <div class="col-md-2">
-            <div class="alert alert-success" role="alert">
+            <div id="divWinnings" class="alert alert-success" role="alert">
                 <b>Winnings:</b> $2.00
             </div>
         </div>
 
         <div class="col-md-2">
-            <div class="alert alert-warning" role="alert">
+            <div id="divCurrentOutcome" class="alert alert-warning" role="alert">
                 Current Spin Outcome: $0.50
             </div>
         </div>
 
         <div class="col-md-2">
-            <div class="alert alert-warning" role="alert">
+            <div id="divNextOutcome" class="alert alert-warning" role="alert">
                 Next Spin's Outcome: $0.00
             </div>
         </div>
@@ -111,11 +107,11 @@
         </div>
 
         <div class="col-md-2">
-            <a href="#" class="btn btn-danger btn-lg" style="width:100%;">Reject</a>
+            <a href="javascript: btnReject_Click();" id="btnReject" class="btn btn-danger btn-lg" style="width:100%;">Reject</a>
         </div>
 
         <div class="col-md-2">
-            <a href="javascript: spin(1);" class="btn btn-success btn-lg" style="width:100%;">Preview/Accept</a>
+            <a href="javascript: btnAccept_Click();" id="btnAccept" class="btn btn-success btn-lg" style="width:100%;">Preview</a>
         </div>
 
         <div class="col-md-1"></div>
@@ -126,6 +122,106 @@
 </section>
 
 <script>
+
+    var currentState = 0;
+    var winnings = 0;
+
+    function UpdateSpinLog(objSpin, status) {
+
+        var strURL = "../DataAccess.ashx?method=UpdateSpinLog&accountid=" + @Session["UserName"] + "&status=" + status + "&spinid=" + objSpin.Id;
+        
+        var strResponse = GetXMLHTTPResponse(strURL);
+
+        if (strResponse != "")
+            alert(strResponse);
+
+    }
+
+
+    function UpdateAccountCredits(amount) {
+
+        var strURL = "../DataAccess.ashx?method=UpdateAccount&accountid=" + @Session["UserName"] + "&amount=" + amount;
+        
+        var strResponse = GetXMLHTTPResponse(strURL);
+
+        if (strResponse != "")
+            alert(strResponse);
+
+    }
+
+    function btnAccept_Click() {
+
+        // If in preview mode
+        if (currentState == 0) {
+
+            GetNextSpin();
+
+            UpdateSpinLog(objNextSpin, "Previewed");
+
+            $("#divNextOutcome").html("Next Spin's Outcome: <b>$" + objNextSpin.Amount.toFixed(2) + "</b>");
+
+            currentState = 1;
+            $("#btnAccept").html("Accept");
+
+        }
+        else {
+
+            UpdateSpinLog(objNextSpin, "Accepted");
+
+            UpdateAccountCredits($("#txtCurrentBet").val() * -1);
+
+            FillAccountData();
+
+            $("#divAvailableMoney").html("Available Money: " + $("#divCredits").html());
+
+            spin(1);
+            currentState = 0;
+            $("#btnAccept").html("Preview");
+
+            
+        }
+        
+    }
+
+    function btnReject_Click() {
+
+
+
+    }
+
+
+
+    function GetNextSpin() {
+
+        var strURL = "../DataAccess.ashx?method=GetNextSpin";
+                
+        var strResponse = GetXMLHTTPResponse(strURL);
+        
+        objNextSpin = JSON.parse(strResponse);
+        
+    }
+
+
+    function SpinDone() {
+
+
+        $("#divCurrentOutcome").html("Current Spin's Outcome: <b>$" + objNextSpin.Amount.toFixed(2) + "</b>");
+
+        if (objNextSpin.Amount > 0) {
+
+            UpdateAccountCredits(objNextSpin.Amount);
+            winnings += objNextSpin.Amount;
+        }
+
+        FillAccountData();
+
+        $("#divAvailableMoney").html("Available Money: " + $("#divCredits").html());
+        $("#divWinnings").html("Winnings: <b>$" + winnings.toFixed(2) + "</b>");
+        $("#divNextOutcome").html("Next Spin's Outcome: <b>???</b>");
+
+
+
+    }
 
     function InitPage() {
 
@@ -141,11 +237,16 @@
         });
 
 
+        $("#divAvailableMoney").html("Available Money: " + $("#divCredits").html());
+        $("#divWinnings").html("Winnings: <b>$0.00</b>");
+        $("#divCurrentOutcome").html("Current Spin's Outcome: <b>$0.00</b>");
+        $("#divNextOutcome").html("Next Spin's Outcome: <b>???</b>");
+
+
         $("input[name='currentBet']").InputSpinner();
 
        // $("input[name='currentBet']").InputSpinner();
-
-
+        
     }
 
 

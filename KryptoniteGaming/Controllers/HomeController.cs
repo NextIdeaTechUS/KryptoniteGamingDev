@@ -18,6 +18,7 @@ namespace KryptoniteGaming.Controllers
         [Authorize]
         public ActionResult Welcome()
         {
+            String str =  User.Identity.Name;
             return View();
         }
 

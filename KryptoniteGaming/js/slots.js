@@ -1,20 +1,7 @@
-/**
 
-Copyright (c) 2012 Clint Bellanger
+var objNextSpin;
 
-MIT License:
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-Sounds by Brandon Morris (CC-BY 3.0)
-Art by Clint Bellanger (CC-BY 3.0)
-
-*/
+var stop_index = 0;
 
 var FPS = 60;
 setInterval(function() {
@@ -70,6 +57,8 @@ var starting_credits = 100;
 var reward_delay = 3; // how many frames between each credit tick
 var reward_delay_grand = 1; // delay for grand-prize winning
 var reward_grand_threshhold = 25; // count faster if the reward is over this size
+
+var arrStops;
 
 var match_payout = new Array(symbol_count);
 match_payout[7] = 4; // 3Down
@@ -234,28 +223,52 @@ function render() {
 //---- Logic Functions ---------------------------------------------
 
 function set_stops() {
+
+    arrStops = [];
+    arrStops[0] = 0;
+    arrStops[1] = 0;
+    arrStops[2] = 0;
+
+
+    arrStops[0] = objNextSpin.Pos1;
+    arrStops[1] = objNextSpin.Pos2;
+    arrStops[2] = objNextSpin.Pos3;
+
   for (var i=0; i<reel_count; i++) {
 
     start_slowing[i] = false;
 
-    stop_index = Math.floor(Math.random() * reel_positions);
+     //stop_index = Math.floor(Math.random() * reel_positions);
+     // stop_index = arrStops[i];
+
+      for (var j = 0; j < reel_positions; j++) {
+         // console.log(i + ', ' + j + ': ' + reels[i][j]);
+          if (reels[i][j] == arrStops[i]) {
+              stop_index = j+1;
+              break;
+          }
+      }
+
+      console.log("Stopping index " + i + ": " + stop_index);
+
       stopping_position[i] = (stop_index * symbol_size);
 
 
-      console.log("Stopping position " + i + ": " + stopping_position[i]);
+      //console.log("Stopping position " + i + ": " + stopping_position[i]);
 
     stopping_position[i] += stopping_distance;
     if (stopping_position[i] >= reel_pixel_length) stopping_position[i] -= reel_pixel_length;
-
-      console.log("Stopping position " + i + ": " + stopping_position[i]);
+      
 
     // convenient here to remember the winning positions
     for (var j=0; j<row_count; j++) {
-      result[i][j] = stop_index + j;
+        result[i][j] = stop_index; // + j;
       if (result[i][j] >= reel_positions) result[i][j] -= reel_positions;
 
       // translate reel positions into symbol
-      result[i][j] = reels[i][result[i][j]];
+        result[i][j] = reels[i][result[i][j]];
+
+       // console.log(i + ', ' + j + ': ' + reels[i][result[i][j]]);
     }
   }
 }
@@ -297,7 +310,7 @@ function logic_spindown() {
 
   // if reels finished moving, begin rewards
   if (reel_speed[reel_count-1] == 0) {
-
+      SpinDone();
     calc_reward();
     game_state = STATE_REWARD;
   }
@@ -321,7 +334,7 @@ function logic_spindown() {
             //console.log("Current: " + reel_position[i]);
 
             var dif = reel_position[i] - stopping_position[i];
-            console.log(dif);
+            //console.log(dif);
 
         if (reel_position[i] == stopping_position[i]) {
           //  if (dif > 0 && dif < symbol_size) {

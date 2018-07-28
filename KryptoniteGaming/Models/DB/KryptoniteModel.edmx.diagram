@@ -6,6 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3820cf75385148eebe42fb7ce461fdc7" Name="Diagram1">
         <EntityTypeShape EntityType="kryptonitegamingModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kryptonitegamingModel.Batch" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="kryptonitegamingModel.SpinLog" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="kryptonitegamingModel.Account" Width="1.5" PointX="2.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

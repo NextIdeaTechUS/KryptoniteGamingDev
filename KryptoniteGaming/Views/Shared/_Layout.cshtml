@@ -82,8 +82,8 @@
 
                             </div>
                             <div class="row" style="padding-top:10px;">
-                                <div class="col-md-12" style="text-align:center;font-size:40px;color:white;">
-                                    <b>$123.00</b>
+                                <div id="divCredits" class="col-md-12" style="text-align:center;font-size:40px;color:white;">
+                                    <b></b>
                                 </div>
                             </div>
 
@@ -92,7 +92,7 @@
                             <ul class="menu-sidebar pull-right" style="font-size:30px;">
 
                                 <li>
-                                    <a href="#"><i class="fa fa-user"></i> Account ABC123</a>
+                                    <a href="#"><i class="fa fa-user"></i> Account  @Session["UserName"]</a>
                                 </li>
                                 <li>
 
@@ -119,7 +119,7 @@
     MAIN CONTENT -->
 
 
-    <div class="container body-content" >
+    <div class="container body-content">
         @RenderBody()
     </div>
 
@@ -163,11 +163,27 @@
 
     <script src="../js/slots.js?t=@DateTime.Now.Millisecond"></script>
 
+    <script src="../js/kryptonite.js?t=@DateTime.Now.Millisecond"></script>
 
     <script>
 
+
+        function FillAccountData() {
+            
+            var strURL = "../DataAccess.ashx?method=GetAccount&id=" + @Session["UserName"];
+            
+            var strResponse = GetXMLHTTPResponse(strURL);
+
+            var objAccount = JSON.parse(strResponse);
+            
+            $("#divCredits").html("<b>$" + objAccount.Credits.toFixed(2) + "</b>");
+            
+        }
+
         jQuery(document).ready(function () {
 
+            // Fill credits and account
+            FillAccountData();
 
             InitPage();
 

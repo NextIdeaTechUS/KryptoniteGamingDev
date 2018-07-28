@@ -26,7 +26,8 @@ namespace KryptoniteGaming.Models.DB
         }
     
         public virtual DbSet<User> Users { get; set; }
-
-        public System.Data.Entity.DbSet<KryptoniteGaming.Models.ViewModel.UserLoginView> UserLoginViews { get; set; }
+        public virtual DbSet<Batch> Batches { get; set; }
+        public virtual DbSet<SpinLog> SpinLogs { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
     }
 }

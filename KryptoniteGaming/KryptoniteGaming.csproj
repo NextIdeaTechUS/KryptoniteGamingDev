@@ -51,6 +51,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -311,6 +314,7 @@
     <Content Include="css\fonts\slick.eot" />
     <Content Include="css\fonts\slick.ttf" />
     <Content Include="css\fonts\slick.woff" />
+    <Content Include="DataAccess.ashx" />
     <None Include="js\jquery-3.3.1-vsdoc.js" />
     <None Include="js\jquery-3.3.1.intellisense.js" />
     <Content Include="js\jqbtk.min.js" />
@@ -326,6 +330,7 @@
     <Content Include="js\jquery.validate.min.js" />
     <Content Include="js\jquery.validate.unobtrusive.js" />
     <Content Include="js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\kryptonite.js" />
     <Content Include="js\main.js" />
     <Content Include="js\mega-menu\mega_menu.js" />
     <Content Include="js\modernizr-2.8.3.js" />
@@ -355,8 +360,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAccess.ashx.cs">
+      <DependentUpon>DataAccess.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Account.cs">
+      <DependentUpon>KryptoniteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Batch.cs">
+      <DependentUpon>KryptoniteModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\KryptoniteModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -373,12 +387,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KryptoniteModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DB\SpinLog.cs">
+      <DependentUpon>KryptoniteModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DB\User.cs">
       <DependentUpon>KryptoniteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EntityManager\AccountManager.cs" />
+    <Compile Include="Models\EntityManager\SpinLogManager.cs" />
+    <Compile Include="Models\EntityManager\SpinManager.cs" />
     <Compile Include="Models\EntityManager\UserManager.cs" />
     <Compile Include="Models\ViewModel\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\JSONHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
