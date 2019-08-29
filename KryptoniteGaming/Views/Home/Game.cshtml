@@ -28,7 +28,15 @@
                         <canvas id="slots" width="500" height="500"></canvas><br />
 
                     </div>
+<<<<<<< HEAD
                     
+=======
+
+                    @*<button type="button" onclick="spin(1);">1 Line</button>
+                    <button type="button" onclick="spin(3);">3 Lines</button>
+                    <button type="button" onclick="spin(5);">5 Lines</button>*@
+
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
                     <div style="display:none;" id="info">
                         <p id="credits"></p>
                         <p id="log"></p>
@@ -53,32 +61,54 @@
         <div class="col-md-1"></div>
 
         <div class="col-md-2">
+<<<<<<< HEAD
             <div id="divAvailableMoney" class="alert alert-warning" role="alert">
+=======
+            <div class="alert alert-warning" role="alert">
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
                 Available money: $5.00
             </div>
         </div>
 
         <div class="col-md-2">
+<<<<<<< HEAD
             <div id="divCurrentBet" class="alert alert-warning" role="alert">
                 Current Bet:
                 <input name="currentBet" id="txtCurrentBet" type="number" value=".25" data-decimals="2" min=".25" max="100" step="0.25" />
+=======
+            <div class="alert alert-warning" role="alert">
+                Current Bet:
+                <input name="currentBet" type="number" value=".25" data-decimals="2" min=".25" max="100" step="0.25" />
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
             </div>
         </div>
 
         <div class="col-md-2">
+<<<<<<< HEAD
             <div id="divWinnings" class="alert alert-success" role="alert">
+=======
+            <div class="alert alert-success" role="alert">
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
                 <b>Winnings:</b> $2.00
             </div>
         </div>
 
         <div class="col-md-2">
+<<<<<<< HEAD
             <div id="divCurrentOutcome" class="alert alert-warning" role="alert">
+=======
+            <div class="alert alert-warning" role="alert">
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
                 Current Spin Outcome: $0.50
             </div>
         </div>
 
         <div class="col-md-2">
+<<<<<<< HEAD
             <div id="divNextOutcome" class="alert alert-warning" role="alert">
+=======
+            <div class="alert alert-warning" role="alert">
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
                 Next Spin's Outcome: $0.00
             </div>
         </div>
@@ -107,11 +137,19 @@
         </div>
 
         <div class="col-md-2">
+<<<<<<< HEAD
             <a href="javascript: btnReject_Click();" id="btnReject" class="btn btn-danger btn-lg" style="width:100%;">Reject</a>
         </div>
 
         <div class="col-md-2">
             <a href="javascript: btnAccept_Click();" id="btnAccept" class="btn btn-success btn-lg" style="width:100%;">Preview</a>
+=======
+            <a href="#" class="btn btn-danger btn-lg" style="width:100%;">Reject</a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="javascript: spin(1);" class="btn btn-success btn-lg" style="width:100%;">Preview/Accept</a>
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
         </div>
 
         <div class="col-md-1"></div>
@@ -123,6 +161,7 @@
 
 <script>
 
+<<<<<<< HEAD
     var currentState = 0;
     var winnings = 0;
 
@@ -223,6 +262,8 @@
 
     }
 
+=======
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
     function InitPage() {
 
 
@@ -237,6 +278,7 @@
         });
 
 
+<<<<<<< HEAD
         $("#divAvailableMoney").html("Available Money: " + $("#divCredits").html());
         $("#divWinnings").html("Winnings: <b>$0.00</b>");
         $("#divCurrentOutcome").html("Current Spin's Outcome: <b>$0.00</b>");
@@ -247,6 +289,13 @@
 
        // $("input[name='currentBet']").InputSpinner();
         
+=======
+        $("input[name='currentBet']").InputSpinner();
+
+       // $("input[name='currentBet']").InputSpinner();
+
+
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
     }
 
 

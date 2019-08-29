@@ -314,7 +314,10 @@
     <Content Include="css\fonts\slick.eot" />
     <Content Include="css\fonts\slick.ttf" />
     <Content Include="css\fonts\slick.woff" />
+<<<<<<< HEAD
     <Content Include="DataAccess.ashx" />
+=======
+>>>>>>> 8128bedd2785970e84cff7843f1859f46888c65d
     <None Include="js\jquery-3.3.1-vsdoc.js" />
     <None Include="js\jquery-3.3.1.intellisense.js" />
     <Content Include="js\jqbtk.min.js" />
